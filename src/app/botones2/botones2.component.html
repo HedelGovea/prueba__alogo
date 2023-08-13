@@ -1,0 +1,74 @@
+<div>
+    <button class="btn btn-danger"  (click)="text_color= 'text-danger'" >Color rojo</button>
+    <button class="btn btn-primary mx-2" (click)="text_color= 'text-primary'" >Color Azul</button>
+    <button class="btn btn-success" (click)="text_color= 'text-success'" >Color verde</button>
+</div>
+<br><br>
+
+<h4>metodo pero con arreglo de clases </h4>
+<div>
+    <button [class.disabled]="button_disabled" class="btn btn-danger"  (click)="text_color= 'text-danger'" >Color rojo</button>
+    <button [class.disabled]="button_disabled" class="btn btn-primary mx-2" (click)="text_color= 'text-primary'" >Color Azul</button>
+    <button [class.disabled]="button_disabled" class="btn btn-success" (click)="text_color= 'text-success'" >Color verde</button>
+</div>
+
+
+<P [class]="text_color">Texto que va a cambiar de  color</P>
+<P>{{text_color}}</P>
+
+<button class="btn btn-secondary" (click)="button_disabled=!button_disabled">
+    active/disable
+</button>
+
+br><br>
+
+<h4>tercer metodo formato de atributo / valor</h4>
+<div>
+    <button 
+    [class]="{'disabled': button_disabled,
+                'btn': false,
+                'btn-danger':true}" class=""  (click)="text_color= 'text-danger'" >Color rojo</button>
+    <button 
+    [class]="{'disabled': button_disabled}" class="btn btn-primary mx-2" (click)="text_color= 'text-primary'" >Color Azul</button>
+    <button 
+    [class]="{'disabled': button_disabled}" class="btn btn-success" (click)="text_color= 'text-success'" >Color verde</button>
+</div>
+
+
+<P [class]="text_color">Texto que va a cambiar de  color</P>
+<P>{{text_color}}</P>
+
+<button class="btn btn-secondary" (click)="button_disabled=!button_disabled">
+    active/disable
+</button>
+
+<br><br>
+
+<h4>08 propiedades dinamicas</h4>
+<div>
+    <button disabled class="btn btn-danger"  (click)="text_color= 'text-danger'" >Color rojo</button>
+    <button disabled class="btn btn-primary mx-2" (click)="text_color= 'text-primary'" >Color Azul</button>
+    <button disabled class="btn btn-success" (click)="text_color= 'text-success'" >Color verde</button>
+</div>
+
+
+<P >Texto que va a cambiar de  color</P>
+
+
+<button class="btn btn-secondary" (click)="button_disabled=!button_disabled">
+    active/disable
+</button>
+<br><br><br><br>
+<br><br><br><br>
+
+<h4>Imagenes</h4>
+<div>
+    <button class ="btn btn-primary" (click)="img = 'https://i0.wp.com/codigoespagueti.com/wp-content/uploads/2023/07/jujutsu-kaisen-gojo-fanart-husbando.jpg'">
+        imagen 1
+        </button>
+        
+        <button class = "btn btn-danger" (click)="img = 'https://noticias.animeonegai.com/wp-content/uploads/2023/07/jujutsu-kaisen-satoru-gojo-purpura.jpg'">
+        imagen 2
+        </button>
+</div>
+<img [src]="img" alt="">
